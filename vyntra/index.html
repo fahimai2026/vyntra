@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vyntra - What's Happening Now</title>
+    <meta name="description" content="Vyntra is the next generation social media platform. Share your thoughts, connect with people, and discover what's happening around the world." />
+    <meta name="keywords" content="Vyntra, social media, share, connect, posts, trending" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="your-google-verification-code" />
+    
+    <!-- Open Graph Security & SEO Tags -->
+    <meta property="og:title" content="Vyntra - What's Happening Now" />
+    <meta property="og:description" content="The next generation social media platform" />
+    <meta property="og:url" content="https://vyntra.com" />
+    <meta property="og:site_name" content="Vyntra" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter SEO Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vyntra - What's Happening Now" />
+    <meta name="twitter:description" content="The next generation social media platform" />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Google Search Console Structured Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Vyntra",
+      "url": "https://vyntra.com",
+      "description": "Next generation social media platform",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://vyntra.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script>
+      // Theme Engine Initializer
+      (function() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        const root = document.documentElement;
+        if (savedTheme === 'light') {
+          root.classList.remove('dark');
+          root.classList.add('light');
+          root.setAttribute('data-theme', 'light');
+        } else {
+          root.classList.remove('light');
+          root.classList.add('dark');
+          root.setAttribute('data-theme', 'dark');
+        }
+        
+        window.toggleTheme = function() {
+          const currentTheme = localStorage.getItem('theme') || 'dark';
+          const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('theme', nextTheme);
+          if (nextTheme === 'light') {
+            root.classList.remove('dark');
+            root.classList.add('light');
+            root.setAttribute('data-theme', 'light');
+          } else {
+            root.classList.remove('light');
+            root.classList.add('dark');
+            root.setAttribute('data-theme', 'dark');
+          }
+          window.dispatchEvent(new Event('themechange'));
+        };
+      })();
+
+      // 1. CONSOLE SECURITY
+      (function() {
+        const noop = function() {};
+        const methods = ['log','warn','error','info','debug',
+                         'trace','dir','table','group','time'];
+        methods.forEach(m => {
+          console[m] = noop;
+        });
+        
+        // Detect DevTools open natively via debugger loop (resizing no longer triggers false positive)
+        setInterval(() => {
+          if (window.self !== window.top) return;
+          const start = new Date();
+          debugger; 
+          if (new Date() - start > 100) {
+              // Devtools is likely open and hitting the debugger breakpoint, but we won't crash the UI for normal resizing
+          }
+        }, 1000);
+        
+        // Block right click
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        
+        // Block F12, Ctrl+Shift+I, Ctrl+U
+        document.addEventListener('keydown', e => {
+          if(e.key === 'F12' || 
+             (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+             (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+             (e.ctrlKey && e.key === 'u')) {
+            e.preventDefault();
+            return false;
+          }
+        });
+      })();
+
+      // 6. ANTI-TAMPER PROTECTION
+      setTimeout(() => {
+        if(document.scripts && document.scripts[0] && document.scripts[0].text) {
+          const _hash = btoa(document.scripts[0].text.length.toString());
+          setInterval(() => {
+            if(document.scripts[0].text && btoa(document.scripts[0].text.length.toString()) !== _hash) {
+              window.location.href = '/blocked';
+            }
+          }, 2000);
+        }
+      }, 1000);
+
+      // 7. SESSION SECURITY
+      window.onload = function() {
+        let _t = Date.now();
+        document.addEventListener('mousemove', () => _t = Date.now());
+        setInterval(() => {
+          if(Date.now() - _t > 1800000) { // 30 min
+            try { if (window.firebase) window.firebase.auth().signOut(); } catch(e){}
+            window.location.reload();
+          }
+        }, 60000);
+      };
+      
+      // Global Sanitization Utility
+      window._s = function(input) {
+        if (typeof input !== 'string') return input;
+        return input
+          .replace(/[<>]/g, '')
+          .replace(/javascript:/gi, '')
+          .replace(/on\w+=/gi, '')
+          .replace(/['"`;]/g, '')
+          .trim()
+          .slice(0, 500);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
