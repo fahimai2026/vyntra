@@ -1,61 +1,48 @@
 <div align="center">
-  <img src="logo.png" alt="Vyntra Logo" width="200"/>
-  
-  # Vyntra 🚀
-  *Welcome to the visual creator community.*
+
+<img src="./public/logo.png" alt="Vyntra Logo" width="250" />
+
+# Vyntra
+**আপনার নতুন প্রজন্মের প্রফেশনাল সোশ্যাল মিডিয়া প্ল্যাটফর্ম**
+
+![GitHub repo size](https://img.shields.io/github/repo-size/fahimai2026/vyntra)
+![GitHub last commit](https://img.shields.io/github/last-commit/fahimai2026/vyntra)
+
 </div>
 
----
+## 📖 প্রজেক্ট পরিচিতি (Introduction)
+Vyntra একটি আধুনিক, দ্রুত এবং প্রফেশনাল সোশ্যাল মিডিয়া প্ল্যাটফর্ম, যা ভিজ্যুয়াল ক্রিয়েটর এবং প্রফেশনালদের জন্য তৈরি করা হয়েছে। আমাদের লক্ষ্য হলো এমন একটি ইকোসিস্টেম তৈরি করা যেখানে সবাই একে অপরের সাথে সংযুক্ত থাকতে পারে এবং সৃজনশীলতা শেয়ার করতে পারে।
 
-## 📖 About Vyntra
-Vyntra is a professional social media platform built specifically for the **visual creator community**. It provides a space for creators to showcase their work, connect with like-minded individuals, and grow their creative portfolio in a modern, engaging environment.
+## ✨ মূল বৈশিষ্ট্য (Key Features)
+* **ইউজার অথেন্টিকেশন:** নিরাপদ এবং দ্রুত সাইন-আপ ও লগইন সিস্টেম (Google, GitHub, Apple সমর্থন করে)।
+* **রিয়েল-টাইম আপডেট:** পোস্ট এবং নোটিফিকেশনের জন্য রিয়েল-টাইম লজিক।
+* **রেসপনসিভ ডিজাইন:** মোবাইল এবং ডেস্কটপ ডিভাইসে চমৎকার ইউজার ইন্টারফেস।
+* **নিরাপদ ডেটা:** ফায়ারবেস ইন্টিগ্রেশনের মাধ্যমে ডেটা সুরক্ষা নিশ্চিত করা হয়েছে।
 
----
-
-## ✨ Key Features
-- **Visual-First Feed:** Experience content in a high-quality, clutter-free environment.
-- **Creator Profiles:** Dedicated profiles to showcase your creative portfolio.
-- **Secure Authentication:** Easy and secure login/sign-up using Firebase Auth.
-- **Responsive Design:** Optimized for both desktop and mobile screens.
-- **Community Engagement:** Connect, share, and interact with fellow creators globally.
-
----
-
-## 🛠 Tech Stack
+## 🛠 টেকনোলজি স্ট্যাক (Tech Stack)
 * **Frontend:** React.js, Tailwind CSS
-* **Backend/Auth:** Firebase Authentication & Firestore
+* **Backend/Auth:** Firebase (Authentication, Firestore)
 * **Deployment:** Vercel
-* **Icons/Assets:** Lucide React / FontAwesome
 
----
+## 🚀 ইনস্টলেশন (Installation)
+আপনার লোকাল মেশিনে প্রজেক্টটি চালাতে নিচের ধাপগুলো অনুসরণ করুন:
 
-## 🚀 Getting Started
-
-Follow these steps to run the project locally:
-
-1. **Clone the repository:**
+1. **রিপোজিটরি ক্লোন করুন:**
    ```bash
    git clone [https://github.com/fahimai2026/vyntra.git](https://github.com/fahimai2026/vyntra.git)
-Install dependencies:
+ডিপেনডেন্সি ইন্সটল করুন:
 
 Bash
 cd vyntra
 npm install
-Environment Variables:
-Create a .env file in the root directory and add your Firebase credentials:
+এনভায়রনমেন্ট ভেরিয়েবল সেটআপ:
+আপনার .env ফাইলে ফায়ারবেস কনফিগারেশন যোগ করুন।
 
-Code snippet
-REACT_APP_FIREBASE_API_KEY=your_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
-...
-Start the development server:
+প্রজেক্ট রান করুন:
 
 Bash
-npm start
-🤝 Contributing
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+npm run dev
+🤝 কন্ট্রিবিউশন
+এই প্রজেক্টটি ওপেন সোর্স। আপনি চাইলে নতুন ফিচার যোগ করতে পারেন বা বাগ ফিক্স করতে সাহায্য করতে পারেন। পুল রিকোয়েস্ট (Pull Request) পাঠানোর জন্য স্বাগতম!
 
-📧 Contact
-Feel free to reach out if you have any questions or feedback!
-
-GitHub: @fahimai2026
+Vyntra © 2026 | তৈরি করেছেন Md Fahim
