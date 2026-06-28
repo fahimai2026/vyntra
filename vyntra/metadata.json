@@ -1,0 +1,6 @@
+{
+  "name": "Vyntra",
+  "description": "Next-generation decentralized social network featuring AI Twins, Intent-Based connections, and dynamic architectures.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
