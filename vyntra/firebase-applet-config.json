@@ -1,0 +1,10 @@
+{
+  "projectId": "vyntra-social",
+  "appId": "1:562041971574:web:47df2c06561b6bd0da5057",
+  "apiKey": "AIzaSyBE7uqZbQQBQIcUIybfDxnSoQ_2CeM2-qU",
+  "authDomain": "vyntra-social.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "vyntra-social.firebasestorage.app",
+  "messagingSenderId": "562041971574",
+  "measurementId": "G-82940D7HSB"
+}

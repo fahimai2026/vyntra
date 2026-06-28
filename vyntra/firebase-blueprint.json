@@ -1,0 +1,78 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile data",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "handle": { "type": "string" },
+        "avatar": { "type": "string" },
+        "bio": { "type": "string" },
+        "followersCount": { "type": "number" },
+        "followingCount": { "type": "number" },
+        "verified": { "type": "boolean" },
+        "createdAt": { "type": "number", "description": "Timestamp" }
+      },
+      "required": ["uid", "email", "name", "handle", "createdAt"]
+    },
+    "Post": {
+      "title": "Post",
+      "description": "A broadcast or post",
+      "type": "object",
+      "properties": {
+        "authorId": { "type": "string" },
+        "content": { "type": "string" },
+        "mediaUrl": { "type": "string" },
+        "mediaType": { "type": "string", "enum": ["image", "video"] },
+        "likesCount": { "type": "number" },
+        "commentsCount": { "type": "number" },
+        "repostsCount": { "type": "number" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["authorId", "content", "createdAt"]
+    },
+    "Follow": {
+      "title": "Follow",
+      "description": "Follow relationship",
+      "type": "object",
+      "properties": {
+        "followerId": { "type": "string" },
+        "followingId": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["followerId", "followingId", "createdAt"]
+    },
+    "Like": {
+      "title": "Like",
+      "description": "Post like",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "postId": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["userId", "postId", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Collection of user profiles"
+    },
+    "posts": {
+      "schema": { "$ref": "#/entities/Post" },
+      "description": "Posts created by users"
+    },
+    "follows": {
+      "schema": { "$ref": "#/entities/Follow" },
+      "description": "Follow mappings"
+    },
+    "likes": {
+      "schema": { "$ref": "#/entities/Like" },
+      "description": "Likes on posts"
+    }
+  }
+}
